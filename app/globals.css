@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-container{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.vertical-height{
+    height: 350px;
+}
+.vertical-height-search{
+    height: 150px;
+}
+.search-wrapper{
+    position: absolute;
+    top: 80%;;
+}
+.search-input-1{
+    border-left: 4px solid #ffb700;
+    border-top: 4px solid #ffb700;
+    border-bottom: 4px solid #ffb700;
+    border-radius: 3px;
+    height: 60px;;
+    padding: 15px;
+    color: #000000;
+    width: 450px;;
+    
+}
+.search-input-2{
+    border-left: 4px solid #ffb700;
+    border-top: 4px solid #ffb700;
+    border-bottom: 4px solid #ffb700;
+    height: 60px;;
+    width: 400px;;
+    padding: 15px;
+    color: #000000;
+   
+}
+.search-button-1{
+    border: 4px solid #ffb700;
+    /* background-color: #003b95; */
+    background-color: #003b95;
+    padding-left: 33px;
+    padding-right: 33px;;
+    height: 60px;;
+}
+.offers-image{
+    height: 100%;
+    width: 100%;;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.city-image-1{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cf.bstatic.com/xdata/images/city/600x600/688249.jpg?k=42442ea62b97c8d6b57b4b6171b406e6778a9b160b4ce0c69f53726b397c7d3e&o=');
+    width: 100% !important;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.city-image-2{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cf.bstatic.com/xdata/images/city/600x600/724981.jpg?k=d2a74ca55c128d783c4a6836713abe2ef7874ba2cc276b9f671df017ff24da19&o=');
+    width: 100% !important;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.city-image-3{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o=');
+    width: 100% !important;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.city-image-4{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cf.bstatic.com/xdata/images/city/600x600/619932.jpg?k=81c20cf1191a1d05472b45413bed3cee67dc92b8c1387c60a960beb5629f109d&o=');
+    width: 100% !important;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.city-image-5{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cf.bstatic.com/xdata/images/city/600x600/640442.jpg?k=90687d20998ee01829027c5e6396a0b8c6d9198bb76bd5ffc7c49c5b779e18ae&o=');
+    width: 100% !important;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hotels{
+    width: 100%;
+    height: 210px;
+}
+.rating-num{
+  
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 2px;
+}
+/* .top-nav a:nth-child(1){
+    border: 1px solid #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 20px;;
+    background-color: #1757b8;
+} */
+.top-nav a{
+    padding: 9px 9px;
+}
+.top-nav a:nth-child(1):hover{
+    background: transparent;
+    }
+.top-nav a:nth-child(1){
+}
+.top-nav a:nth-child(1){
+    border: 1px solid #ffffff;
+    border-radius: 20px;;
+    text-align: center;
+    background-color: #1757b8;
+}
+.top-nav a:hover{
+    background-color: #1757b8;
+    border-radius: 20px;
+}
+.link-icon{
+    display: flex;
+    align-items: center;
+}
+.top-nav-0 a{
+    padding: 9px 9px;
+}
+.top-nav-0 a:hover{
+    background-color: #1757b8;
+    border-radius: 20px;
+}
+.side-search{
+    padding: 15px 10px ;
+    /* width: 100%;; */
+}
+.side-search-input{
+    width: 100%;;
+    border: none;
+    height: 35px;
+    padding-left: 6px;
+    font-size: small;
+    font-weight: 400;
+}
+.side-search-input-icon{
+    background: white;
+    height: 35px;
+    width: 18px;
+    padding-left: 10px;
+}
+.hotel-list{
+    padding: 15px;
+    padding: 10px;
+}
+.filters{
+    border: 1px solid #cccccc;
+    padding: 15px 10px ;
+}
+.filter-heading{
+    
+    border-bottom: 1px solid #cccccc;
+    margin-top: 10px;    
+}
