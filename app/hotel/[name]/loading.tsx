@@ -1,5 +1,4 @@
-
-export default function Loading() {
+export default function loading() {
   return (
     <main>
                 <div className="h-96 overflow-hidden animate-pulse bg-slate-200">
