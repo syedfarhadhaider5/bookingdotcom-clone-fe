@@ -8,10 +8,31 @@ import Offers from './components/Offers'
 import City from './components/City'
 import HotelList from './components/HotelList'
 import Footer from './components/Footer'
+import { type } from 'os'
 const inter = Inter({ subsets: ['latin'] })
 
-
-export default function Home() {
+export type HotelImages = {
+  id: number;
+  image_path: string;
+}
+export type HotelPrices = {
+  id: number;
+  amount: number;
+}
+export type Hotel = {
+  id: number;
+  name: string,
+  country: string;
+  hotelImages: HotelImages[],
+  hotelPrices: HotelPrices[]
+}
+const getHotels = async () =>{
+  const response = await fetch('http://localhost/bookingdotcom-clone/api/web/version1/hotel/?expand=hotelImages,hotelMeals,hotelRooms,hotelStars,hotelViews,meals,facilities,hotelPrices');
+  const hotel: Hotel[]  = await response.json();
+  return hotel;
+}
+export default async function  Home() {
+  const hotels = await getHotels();
   return (
     <>
       <div className="grid grid-cols-5 gap-4">
@@ -34,7 +55,6 @@ export default function Home() {
                     {/* Search bar  */}
                 </div>
             </div>
-
           </div>    
       </div>
       <div className="container mx-auto top-container">
@@ -45,7 +65,13 @@ export default function Home() {
           <City />
            {/* City */}
            {/* Hotels */}
-           <HotelList />
+           <div className="grid grid-cols-4 mt-4 gap-4 mb-4">
+            {
+              hotels.map(hotel => (
+                <HotelList hotel={hotel} />
+              ))
+            }
+           </div>
            {/* Hotels */}
            {/* Footer */}
             <Footer />
