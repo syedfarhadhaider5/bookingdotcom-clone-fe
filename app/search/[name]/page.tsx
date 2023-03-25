@@ -1,8 +1,8 @@
 
-import Header from '../components/Header'
-import HotelList from './components/HotelList'
-import SideBarFilters from './components/SideBarFilters'
-import SidebarSearch from './components/SidebarSearch'
+import Header from '../../components/Header'
+import HotelList from '../components/HotelList'
+import SideBarFilters from '../components/SideBarFilters'
+import SidebarSearch from '../components/SidebarSearch'
 export default function page() {
   return (
     <>
