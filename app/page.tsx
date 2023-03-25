@@ -25,6 +25,8 @@ export type Hotel = {
   country: string;
   hotelImages: HotelImages[],
   hotelPrices: HotelPrices[]
+
+
 }
 const getHotels = async () =>{
   const response = await fetch('http://localhost/bookingdotcom-clone/api/web/version1/hotel/?expand=hotelImages,hotelMeals,hotelRooms,hotelStars,hotelViews,meals,facilities,hotelPrices');
