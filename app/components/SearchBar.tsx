@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'
+import { count } from "console";
 
 // export type SearchHotel = {
 //   name: string,
@@ -19,6 +20,8 @@ export default function SearchBar() {
   const [inputValue, setInputValue] = useState('');
   const [NotFound, setNotFound] = useState('');
   const [HotelId, setHotelId] = useState(0);
+  const [Name, setName] = useState('');
+  const [Country, setCountry] = useState('');
   const [suggestionsList, setSuggestionsList] = useState<Hotel[]>([]);
   
   const router = useRouter()
@@ -38,6 +41,8 @@ export default function SearchBar() {
     }
   };
   const searchedValue = (country: any, name: any, id: any) =>{
+    setCountry(country)
+    setName(name)
     setHotelId(id)
     if(country != null || name != null)
     
@@ -46,11 +51,25 @@ export default function SearchBar() {
     setInputValue(country + name);
     setSuggestionsList([]);
   }
-  const handleRedirect = () =>{
+  const handleRedirect = async () =>{
     if(HotelId === 0){
       return;
     }
-    router.push(`search/${HotelId}`);
+    // http://localhost/bookingdotcom-clone/api/web/version1/hotels/1
+    const response = await fetch(`http://localhost/bookingdotcom-clone/api/web/version1/hotels/${HotelId}`)
+    const SingleHotel = await response.json()
+   // console.log(SingleHotel.country_slug)
+    if(Name !== null){
+      router.push(`search/${SingleHotel.name_slug}`);
+      setName('')
+
+    }else{
+      if(Country !== null){
+        router.push(`search/${SingleHotel.country_slug}`);
+        setCountry('')
+      }
+    }
+    
   }
 //   try{
 //     useEffect(() => {
@@ -62,10 +81,6 @@ export default function SearchBar() {
 //   }catch (error) {
 // console.error('Fetch failed:', error)
 // }
-  
-
-  
- 
   return (
     <>
          <div className='flex pt-10 search-wrapper'>
