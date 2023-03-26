@@ -8,7 +8,6 @@ import Offers from './components/Offers'
 import City from './components/City'
 import HotelList from './components/HotelList'
 import Footer from './components/Footer'
-import { type } from 'os'
 const inter = Inter({ subsets: ['latin'] })
 
 export type HotelImages = {
@@ -29,7 +28,8 @@ export type Hotel = {
 
 }
 const getHotels = async () =>{
-  const response = await fetch('http://localhost/bookingdotcom-clone/api/web/version1/hotel/?expand=hotelImages,hotelMeals,hotelRooms,hotelStars,hotelViews,meals,facilities,hotelPrices');
+  console.log(process.env.APP_URL);
+  const response = await fetch(`${process.env.APP_URL}/api/web/version1/hotel/?expand=hotelImages,hotelMeals,hotelRooms,hotelStars,hotelViews,meals,facilities,hotelPrices`);
   const hotel: Hotel[]  = await response.json();
   return hotel;
 }
