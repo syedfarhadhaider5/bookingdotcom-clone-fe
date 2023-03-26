@@ -28,7 +28,6 @@ export type Hotel = {
 
 }
 const getHotels = async () =>{
-  console.log(process.env.APP_URL);
   const response = await fetch(`${process.env.APP_URL}/api/web/version1/hotel/?expand=hotelImages,hotelMeals,hotelRooms,hotelStars,hotelViews,meals,facilities,hotelPrices`);
   const hotel: Hotel[]  = await response.json();
   return hotel;

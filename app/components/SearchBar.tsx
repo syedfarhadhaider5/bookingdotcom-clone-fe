@@ -17,6 +17,8 @@ export default function SearchBar() {
   const [suggestionsList, setSuggestionsList] = useState<Hotel[]>([]);
 
   const router = useRouter();
+  // const { slug } = router.query
+  // console.log(slug);
 
   const handleChange = async (event: any) => {
     setInputValue(event.target.value);
@@ -44,6 +46,15 @@ export default function SearchBar() {
         setSuggestionsList([]);
   }
 
+  const formatSlug = (slug: any) => {
+    return slug
+      .replace(/-/g, ' ')
+      .toLowerCase()
+      .split(' ')
+      .map((word :any) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+  // console.log(formatSlug('islamabad-marriott-hotel'))
   const handleRedirect = async () => {
     if (HotelId === 0) {
       return;
@@ -84,6 +95,7 @@ export default function SearchBar() {
           {suggestionsList.map(hotel => (
             <div
               className="suggestion"
+              key={hotel.id}
               onClick={() => searchedValue(hotel.country, hotel.name, hotel.id)}
             >
               {hotel.country}

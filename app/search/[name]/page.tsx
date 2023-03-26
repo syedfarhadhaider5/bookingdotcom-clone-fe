@@ -3,7 +3,14 @@ import Header from '../../components/Header'
 import HotelList from '../components/HotelList'
 import SideBarFilters from '../components/SideBarFilters'
 import SidebarSearch from '../components/SidebarSearch'
-export default function page() {
+
+type PageProps = {
+    params: {
+      name: string
+    }
+  }
+
+export default function page({params: {name}}: PageProps) {
   return (
     <>
         <div className="grid grid-cols-1">
@@ -32,7 +39,7 @@ export default function page() {
                 <div className='col-span-3'>
                     {/* RightBar */}
                     {/* Hotels List */}
-                    <HotelList />
+                    <HotelList slug={name}/>
                     {/*  Hotels List */}
                     {/* RightBar */}
                 </div>
