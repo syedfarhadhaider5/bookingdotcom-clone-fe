@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBed, faPlane, faCar, faMagnet, faTaxi, faLocationDot, faHotel } from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 interface Hotel {
   id: number,
   country: string,
@@ -26,7 +28,7 @@ export default function SearchBar() {
     if (inputValue.length === 3) {
       const response = await fetch(`http://localhost/bookingdotcom-clone/api/web/version1/hotel/search?q=${inputValue}`);
       const data = await response.json();
-      console.log(data.error)
+      console.log(data)
 
       if (!data.error) {
         setSuggestionsList(data);
@@ -62,12 +64,12 @@ export default function SearchBar() {
 
     const response = await fetch(`http://localhost/bookingdotcom-clone/api/web/version1/hotels/${HotelId}`);
     const SingleHotel = await response.json();
-
-    if (Name !== null) {
+    console.log(SingleHotel + 22);
+    if (Name !== undefined) {
       router.push(`search/${SingleHotel.name_slug}`);
       setName('')
     } else {
-      if (Country !== null) {
+      if (Country !== undefined) {
         router.push(`search/${SingleHotel.country_slug}`);
         setCountry('');
       }
@@ -98,8 +100,18 @@ export default function SearchBar() {
               key={hotel.id}
               onClick={() => searchedValue(hotel.country, hotel.name, hotel.id)}
             >
-              {hotel.country}
-              {hotel.name}
+              {hotel.country !== undefined ? 
+                <>
+                  <FontAwesomeIcon icon={faLocationDot} size="1x" />
+                  &nbsp;&nbsp;{hotel.country}
+                </>
+              : ''}
+              {hotel.name !== undefined ? 
+                <>
+                  <FontAwesomeIcon icon={faHotel} />
+                  &nbsp;&nbsp;{hotel.name}
+                </>
+              : ''}
             </div>
           ))}
         </div>
