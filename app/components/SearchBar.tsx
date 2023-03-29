@@ -81,7 +81,7 @@ export default function SearchBar() {
           type="text" 
           className='search-input-1 focus:outline-none'
           placeholder='Where are you going?'
-          value={inputValue.replace(/null/g, "")}
+          value={inputValue.replace(/undefined/g, "")}
           onChange={handleChange}
         />
         <input type="text" className='search-input-2 focus:outline-none' placeholder='Check-in date - Check-out date?' />
