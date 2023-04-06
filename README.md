@@ -1,1 +1,1 @@
-<h1>Booking.com Froundend in Nextjs countinue</hi>
+<h1>Booking.com Front end in Nextjs countinue</hi>
