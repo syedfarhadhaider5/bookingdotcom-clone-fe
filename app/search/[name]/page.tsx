@@ -32,7 +32,7 @@ export default function page({params: {name}}: PageProps) {
                             <SidebarSearch />
                         {/* SideSearch */}
                         {/* Sidebar Filters */}
-                            <SideBarFilters />
+                            <SideBarFilters slug={name} />
                         {/* Sidebar Filters */}
                     {/* Sidebar */}
                 </div>
